@@ -10,7 +10,7 @@ class StudentTestCase(LiveServerTestCase):
 	def tearDown(self):
 		self.browser.quit()
 
-	def test_student_find_solos(self):
+	def test_student_finds_solos(self):
 		"""
 		Test that a user can search for solos
 		"""
@@ -18,7 +18,7 @@ class StudentTestCase(LiveServerTestCase):
 
 		# Steve is a jazz student who would like to find more examples of 
 		# solos so he can improve his own improvisation. He visits the page
-		# page of JMAD.
+		# of JMAD.
 		home_page = self.browser.get(self.live_server_url + '/')
 		
 
@@ -50,7 +50,7 @@ class StudentTestCase(LiveServerTestCase):
 		self.browser.find_element_by_css_selector('form button').click()
 
 		second_search_result = self.browser.find_elements_by_css_selector('.jmad-search-result')
-		self.assertEqual(len(second_search_result),2)
+		self.assertEqual(len(second_search_result),3)
 		self.fail('Incomplete test.')
 
 		# He clicks on a search result.
